@@ -6,5 +6,5 @@ const topNStudentsAttendees = (students, attendees, N) => {
         courseAttendees.forEach(ca => attendObj[ca]++);
         
 })
-return Object.entries(attendObj).sort((a,b) => b[1]-a[1]).map(i => i[0]).slice(0,N);
+return Object.entries(attendObj).filter(i => !isNaN(i[1])).sort((a,b) => b[1]-a[1]).map(i => i[0]).slice(0,N);
 }
